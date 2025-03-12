@@ -1,1 +1,1 @@
-# Edition_correspondance_Mgr_Paul_Remond
+# Edition de la correspondance de Mgr Paul Remond
