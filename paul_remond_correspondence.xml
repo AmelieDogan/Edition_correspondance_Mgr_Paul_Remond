@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="oddforpaulremond.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="oddforpaulremond.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xml:lang="fr" xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Correspondance de Paul Rémond</title>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Amélie Dogan</authority>
+            <availability status="free">
+               <licence>Creative Commons Licence CC-BY-NC</licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <country ref="FR">France</country>
+                  <settlement type="city" ref="place_nice">Nice</settlement>
+                  <repository>Archives historiques du diocèse de Nice - Fonds Paul Rémond</repository>
+                  <idno>FR AEC / 06 - SC2 2R6, 2</idno>
+               </msIdentifier>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         
+         <correspDesc xml:id="corresp_remond-vayssiere_1939-01-20">
+            <correspAction type="sent">
+               <persName ref="#person_paul_remond">Paul Rémond</persName>
+               <placeName>
+                  <settlement type="city" ref="#place_nice">Nice</settlement>
+               </placeName>
+               <date when="1939-01-20">20 janvier 1939</date>
+            </correspAction>
+            <correspAction type="received">
+               <persName ref="#person_vayssiere">Etienne-Marie Vayssière</persName>
+               <placeName>
+                  <address>
+                     <street><num>35</num>, Rue Edmond Rostand</street>
+                     <settlement type="city" ref="#place_marseille">Marseille</settlement>
+                     <country ref="FR">France</country>
+                  </address>
+               </placeName>
+               <date>unknown</date>
+            </correspAction>
+         </correspDesc>
+         
+         <correspDesc xml:id="corresp_vayssiere-remond_1939-01-22">
+            <correspAction type="sent">
+               <persName ref="#person_vayssiere">Etienne-Marie Vayssière</persName>
+               <placeName>
+                  <address>
+                     <street><num>35</num>, Rue Edmond Rostand</street>
+                     <settlement type="city" ref="#place_marseille">Marseille</settlement>
+                     <country ref="FR">France</country>
+                  </address>
+               </placeName>
+               <date when="1939-01-22">22 janvier 1939</date>
+            </correspAction>
+            <correspAction type="received">
+               <persName ref="#person_paul_remond">Paul Rémond</persName>
+               <placeName>
+                  <settlement>Nice</settlement>
+               </placeName>
+               <date>unknown</date>
+            </correspAction>
+            <correspContext>
+               <ref type="prev" target="#corresp_remond-vayssiere_1939-01-20">Lettre précédente de Paul Rémond à Etienne-Marie Vayssière: 20 janvier 1939</ref>
+            </correspContext>
+         </correspDesc>
+         
+         <correspDesc xml:id="corresp_remond-vayssiere_1940-02-19">
+            <correspAction type="sent">
+               <persName ref="#person_paul_remond">Paul Rémond</persName>
+               <placeName>
+                  <settlement type="city" ref="#place_nice">Nice</settlement>
+               </placeName>
+               <date when="1940-02-19">19 février 1940</date>
+            </correspAction>
+            <correspAction type="received">
+               <persName ref="#person_vayssiere">Etienne-Marie Vayssière</persName>
+               <placeName>
+                  <address>
+                     <street><num>35</num>, Rue Edmond Rostand</street>
+                     <settlement type="city" ref="#place_marseille">Marseille</settlement>
+                     <country ref="FR">France</country>
+                  </address>
+               </placeName>
+               <date>inconnue</date>
+            </correspAction>
+         </correspDesc>
+         
+      </profileDesc>
+   </teiHeader>
+   
+   <text>
+      <body>
+         
+         <div type="correspondence" corresp="#corresp_remond-vayssiere_1939-01-20">
+            <head>Correspondance entre Monseigneur Paul Rémond et le Père Etienne-Marie Vayssière, <abbr>o.p.</abbr><expan>ordo prædicatorum</expan> (20 janvier 1939)</head>
+            <opener>
+               <pb n="1"/>
+               <dateline>
+                  <date when="1939-01-20">20 Janvier 1939</date>
+               </dateline>
+               <lb/><salute>Mon <persName ref="#person_vayssiere">Révérend Père</persName>,</salute>
+            </opener>
+            
+            <p n="1"><lb/>A la suite de la visite que vous avez bien voulu faire à
+               <lb/><placeName ref="#place_nice">Nice</placeName> et de l'entretien que nous avons eu, je viens de confirmer,
+               <lb/>officiellement, mon désir de voir l'<orgName ref="#org_dominican_order">Ordre de St Dominique</orgName> s'ins-
+               <lb/>taller dans <placeName ref="#place_nice">ma ville Episcopale</placeName>, afin d'y fonder une Communauté
+               <lb/>de l'<orgName ref="#org_dominican_order">Ordre</orgName>. C'est à la <placeName ref="#place_toulouse_province_op">province de Toulouse</placeName> que je m'adresse pour
+               <lb/>obtenir cette insigne faveur, puisque <placeName ref="#place_nice">Nice</placeName> se trouve géographiquemen
+               <lb/>sur le territoire assigné à <placeName ref="#place_toulouse_province_op">votre Province française du Midi</placeName>.</p>
+            
+            <p n="2"><lb/>Mon désir est de voir votre installation se faire le plus
+               <lb/>tôt possible, et se développer rapidement jusqu'à la constitu-
+               <lb/>tion d'un Couvent de plein exercice.</p>
+            
+            <p n="3"><lb/>Je mettrai à votre disposition l'<placeName ref="#place_francois_de_paul_church">Eglise St François de Paule</placeName>
+               <lb/>et <placeName ref="#place_francois_de_paul_presbytery">son presbytère</placeName>, contenant une quinzaine de pièces, dans l'état
+               <lb/>où ces édifices se trouvent actuellement. L'<placeName ref="#place_francois_de_paul_church">Eglise</placeName> a été restaurée
+               <lb/>par le curé, Monsieur le Chanoine <persName ref="#person_matteudi">Matteudi</persName>, qui a dépensé environ
+               <lb/>80.000 Frs. Le <placeName ref="#place_francois_de_paul_presbytery">presbytère</placeName> ne demanderait pour le moment que quel-
+               <lb/>ques aménagements intérieurs, afin de répondre aux exigences de
+               <lb/>la vie de communauté.</p>
+            
+            <p n="4"><lb/>La Paroisse serait supprimée et jointe à celle de la <placeName ref="#place_reparate_cathedral">Cathé-
+               <lb/>drale</placeName>, toute voisine. Toutefois, il serait entendu que l'<placeName ref="#place_francois_de_paul_church">Eglise
+               <lb/>St François de Paule</placeName>, resterait, comme par le passé, à la dis-
+               <lb/>position du public pour l'assistance à toutes les cérémonies habi-
+               <lb/>tuelles. <placeName ref="#place_francois_de_paul_church">Cette Chapelle publique</placeName> serait, comme toutes les autres,
+               <lb/>soumise aux réglements diocésains, particulièrement en ce qui con-
+               <lb/>cerne les quêtes prescrites, les Mandements à lire et les Lettres
+               <lb/>Pastorales.</p>
+            
+            <p n="5"><lb/>Vous serez donc débarrassé de l'Administration paroissiale.
+               <lb/>Néanmois, il se peut que je vous demande de continuer certaines
+               <lb/>Oeuvres, ayant leur siège à <placeName ref="#place_francois_de_paul_church">St François de Paule</placeName>, oeuvres dont
+               <lb/>nous avons parlé et pour lesquelles vous avez certainement des
+               <lb/>religieux qualifiés.</p>
+            
+            <p n="6"><lb/>En demandant à l'<orgName ref="#org_dominican_order">Ordre de St Dominique</orgName> la constitution d'une
+               <pb n="2"/><lb/>Communauté à <placeName>Nice</placeName>, mon intention est de voir, dans <placeName ref="#place_nice">ma ville épis-
+               <lb/>copale</placeName>, se former, grâce à cette maison, un centre de rayonnement
+               <lb/>intellectuel, un foyer de science religieuse. Je voudrais que
+               <lb/>nos Avocat, nos médecins, nos officiers, nos magistrats, nos pro-
+               <lb/>fesseurs, nos étudiants, puissent y trouver les conseils, les guides,
+               <lb/>dont leurs esprits inquiets et curieux, ont souvent besoin.</p>
+            
+            <p n="7"><lb/>Je voudrais aussi qu'ils y allument en eux la flamme de
+               <lb/>l'apostolat et y trouvent les munitions nécessaires pour mener les
+               <lb/>campagnes d'action catholique dans leur milieu.</p>
+            
+            <p n="8"><lb/>Et puis, <placeName ref="#place_nice">Nice</placeName> devient un centre universitaire méditerranéen,
+               <lb/>c'est un poste d'observation et de commande, d'où l'on peut voir
+               <lb/>de très loin et recueillir maintes informations. Vos religieux
+               <lb/>y rendront, j'en ai la certitude, d'insignes services, en dirigeant,
+               <lb/>en confessant, en instruisant, en prêchant, en écrivant, j'ajouterai
+               <lb/>même en étudiant. Enfin, l'approche du Congrès Eucharistique Inter-
+               <lb/>nationnal de <date when="1940">1940</date>, leur ouvrira un champ d'action immense, où ils
+               <lb/>pourront faire du bon travail.</p>
+            
+            <closer><salute><lb/>Croyez, je vous prie, <persName ref="#person_vayssiere">mon très Révérend Père</persName>, à mes sentiments
+               <lb/>religieusement dévoués et reconnaissants.</salute>
+               <address>
+                  <persName ref="#person_vayssiere">Le REVEREND PERE VAYSSIERE</persName>
+                  <roleName>Provincial des Dominicains</roleName>
+                  <street>Rue Edmond Rostand</street>
+                  <settlement type="city" ref="#place_marseille">MARSEILLE</settlement>
+                  <country ref="FR"/>
+               </address>
+            </closer>
+         </div>
+         
+         <div type="correspondence" corresp="#corresp_vayssiere-remond_1939-01-22">
+            <head>Correspondance entre le Père Etienne-Marie Vayssière, <abbr>o.p.</abbr><expan>ordo prædicatorum</expan> et Monseigneur Paul Rémond (22 janvier 1939)</head>
+            <opener><dateline><placeName ref="#place_marseille">Marseille</placeName>, le <date>22 Janvier 1939</date></dateline>
+            <address><street><num>35</num> Rue Edmond-Rostand</street></address>
+            
+            <salute><persName ref="#person_paul_remond">Excellence</persName>,</salute></opener>
+            
+            <p><lb/>Je viens de recevoir votre lettre, si paternelle,
+            <lb/>si bienveillante, et sans retard je viens vous dire
+            <lb/>ma gratitude, et celle de <placeName ref="#place_toulouse_province_op">la Province dont je suis
+            <lb/>le représentant</placeName>. .......gratitude pour votre choix
+            <lb/>du fils de Saint Dominique de la <placeName ref="#place_toulouse_province_op">Province de
+            <lb/>Toulouse</placeName>, pour évangéliser, la <placeName ref="#place_nice">ville</placeName> et le <placeName ref="#place_nice_diocese">diocèse
+            <lb/>de Nice</placeName>, confiés par l'Eglise à votre sollicitude.</p>
+            
+            <p><lb/>gratitude, pour l'<placeName ref="#place_francois_de_paul_church">Eglise</placeName> et le <placeName ref="#place_francois_de_paul_presbytery">presbytère</placeName>, mis
+            <lb/>à leur disposition, avec une délicate générosité
+            <lb/>gratitude, pour la mission de choix, que vous
+            <lb/>voulez nous voir remplir, toute en harmonie
+            <lb/>avec l'esprit de notre vocation dominicaine</p>
+            
+            <p><lb/>cette gratitude, nous aurons à coeur, de la
+            <lb/>témoigner à <persName ref="#person_paul_remond">vôtre Excellence</persName>, avec un tout
+            <lb/>filial dévouement, ayant pleinement
+            <lb/>conscience de l'importance de la tache que vous
+            <lb/>nous confiez.. et ayant à coeur de faire reviver
+            <lb/>les lointaines traditions du passé, les labeurs
+            <lb/>l'action apostolique de nos anciens Pères
+            <lb/>sur cette terre de <placeName ref="#place_nice">Nice</placeName>, oui vous nous appelez.</p>
+            
+            <p><lb/>Sans retard, je vais convoquer les
+            <lb/>membres du Conseil Provincial, pour l'acceptation
+            <lb/>officielle et formelle, de cette Fondation que
+            <lb/>vous nous confiez.. et du mandat dont vous
+            <lb/>nous honorez..        cela fait, j'enverrai,
+            <lb/>cette demande de <persName ref="#person_paul_remond">votre Excellence</persName>, avec notre
+            <lb/>acceptation, au <persName ref="#person_martin_stanislas_gillet">Révérendissime Maitre Général</persName>
+            <lb/>qui après l'avoir présenté au Conseil Généralice
+            <lb/>fera auprès du <persName ref="#person_pie_xi">St Siège</persName>, toutes démarches nécessaires
+            <lb/>pour que suivant les exigences du droit canon tout
+            <lb/>soit définitivement, réglés et conclus...</p>
+            
+            <p><lb/>Ce Règlement définitif, étant conclu,
+            <lb/>je me mettrai à nouveau en rapport avec <persName ref="#person_paul_remond">vôtre
+            <lb/>Excellence</persName>, pour toutes réalisations pratiques qui
+            <lb/>devront suivre....</p>
+            
+            <p><lb/>J'avais, en commençant, confié le succès de cette
+            <lb/>affaire à la <persName ref="#person_mary_mother_of_jesus">Très Sainte-Vierge</persName> .....Elle y a visiblement
+            <lb/>travaillé, par la disposition si bienveillante, qu'elle a
+            <lb/>avisé dans votre coeur à notre égard... j'ai confiance
+            <lb/>que sa maternelle sollicitude conduira tout, à une
+            <lb/>heureuse et rapide conclusion.</p>
+            
+            <closer><salute><lb/>En remerciant une fois encore, <persName ref="#person_paul_remond">vôtre
+            <lb/>Excellence</persName> je lui demande de vouloir bien me
+            <lb/>bénir avec tous les Religieux de la <placeName ref="#place_toulouse_province_op">Province</placeName> et
+            <lb/>agréer l'hommage, d'une toute filial dépendance pour
+            <lb/>un prochain avenir.</salute>
+            
+            <signed><lb/><persName ref="#person_vayssiere"><abbr>R. P.</abbr><expan>Révérend Père</expan> Marie-<abbr>Et.</abbr><expan>Etienne</expan> Vayssière</persName>
+            <lb/><abbr>o.p.</abbr><expan>ordo prædicatorum</expan>
+            <lb/>Provincial de Toulouse</signed></closer>
+         </div>
+         
+         <div type="correspondence" corresp="#corresp_remond-vayssiere_1940-02-19">
+            <head>Correspondance entre Monseigneur Paul Rémond et le Père Etienne-Marie Vayssière, <abbr>o.p.</abbr><expan>ordo prædicatorum</expan> (19 février 1940)</head>
+            <opener><dateline><settlement>Nice</settlement> le <date>19 Février 1940</date></dateline>
+            
+            <salute><lb/><persName ref="#person_vayssiere">Mon révérend Père</persName>,</salute></opener>
+            
+            <p><lb/>Voici longtemps que je vous avais demandé de bien vouloir
+            <lb/>nous rendre l'immense service d'établir, dans <placeName ref="#place_nice">ma ville Métro-
+            <lb/>politaine</placeName> un Couvent de vos Religieux. Vous avez bien voulu
+            <lb/>accéder à mes désirs et nous envoyer, au mois de <date when="1939">Juillet 1939</date>,
+            <lb/>quelques-uns de vos Pères. Je les ai établis dans l'<placeName ref="#place_francois_de_paul_church">Eglise St.
+            <lb/>François de Paule</placeName> et ses dépendances. Cette <placeName ref="#place_francois_de_paul_church">Eglise</placeName> qui jusqu'alors
+            <lb/>état paroissiale, devient, par le fait de la suppression de
+            <lb/>la Paroisse, qui de toute façon rentrait dans nos plans d'Ad-
+            <lb/>ministration Diocésaine, votre Eglise conventuelle.</p>
+            
+            <p><lb/>Je vous demande cependant de bien vouloir y assurer,
+            <lb/>pour la population, un service religieux comportant les offi-
+            <lb/>ces du Dimanche et tous les offices de dévotion qu'on peut or-
+            <lb/>ganiser les jours de la semaine.</p>
+            
+            <p><lb/>Il est bien entendu que mon offre et votre acceptation
+            <lb/>constituent un accord définitif qui nous engage les uns et
+            <lb/>les autres. Ni moi, ni mes successeurs, j'en ai l'assurance,
+            <lb/>ne vous retireront la confiance que de tout coeur je vous
+            <lb/>accorde aujourd'hui.</p>
+            
+            <p><lb/>Vous pouvez donc être assuré en ce qui concerne le
+            <lb/><placeName ref="#place_nice_diocese">Diocèse de Nice</placeName> de la stabilité de votre installation. Vous
+            <lb/>avez entrepris des dépenses considérables, votre intention
+            <lb/>est d'en engager d'autres encore pour l'organisation du Cou-
+            <lb/>vent des Pères et des locaux des oeuvres dont vous avez besoin.
+            <lb/>J'approuve les travaux dont vous m'avez soumis les projets et
+            <lb/>dont l'exécution par vous nous crée de véritables obligations
+            <lb/>morales de fidélité et de reconnaissance auxquelles nous ne
+            <lb/>nous soustrairons pas.</p>
+            
+            <closer><salute><lb/>Soyez assuré, <persName ref="#person_vayssiere">mon Révérend Père</persName>, de la reconnaissance
+            <lb/>de <persName ref="#person_paul_remond">l'Evêque de Nice</persName>, de son clergé et de <placeName ref="#place_nice_diocese">son Diocèse</placeName> et
+            <lb/>veuillez agréer mes sentiments religieusement dévoués.</salute>
+            
+            <address><persName ref="#person_vayssiere">Le REVEREND PERE VAYSSIERE</persName>
+               <roleName><placeName ref="#place_toulouse_province_op">Provincial de la Province de Toulouse</placeName></roleName>
+            <street><num>35</num> rue Edmond Rostan</street>
+            <settlement type="city" ref="#place_marseille">MARSEILLE</settlement></address></closer>
+         </div>
+        
+      </body>
+      <back>
+         <!-- Déclaration des entités nommées dans <back> -->
+         <listPerson>
+            <person xml:id="person_paul_remond">
+               <persName>
+                  <forename>Paul</forename>
+                  <surname>Rémond</surname>
+                  <roleName>Évêque de Nice</roleName>
+               </persName>
+               <birth>
+                  <date>1873</date>
+               </birth>
+               <death>
+                  <date>1963</date>
+               </death>
+            </person>
+            <person xml:id="person_vayssiere">
+               <persName>
+                  <forename>Etienne-Marie</forename>
+                  <surname>Vayssière</surname>
+                  <roleName>Provincial des Dominicains</roleName>
+               </persName>
+               <birth>
+                  <date>1864</date>
+               </birth>
+               <death>
+                  <date>1940</date>
+               </death>
+            </person>
+            <person xml:id="person_matteudi">
+               <persName>
+                  <forename>Ludovic</forename>
+                  <surname>Matteudi</surname>
+                  <roleName>Chanoine</roleName>
+               </persName>
+               <birth>
+                  <date>1881</date>
+               </birth>
+               <death>
+                  <date>1939</date>
+               </death>
+            </person>
+            <person xml:id="person_pie_xi">
+               <persName>
+                  <forename>Achille</forename>
+                  <surname>Ratti</surname>
+                  <roleName>Pape (sous le nom de Pie XI, 1922-1939)</roleName>
+               </persName>
+               <birth>
+                  <date>1857</date>
+               </birth>
+               <death>
+                  <date>1939</date>
+               </death>
+            </person>
+            <person xml:id="person_martin_stanislas_gillet">
+               <persName>
+                  <forename>Martin Stanislas</forename>
+                  <surname>Gillet</surname>
+                  <roleName>Maître de l'Ordre dominicain (1929-1946)</roleName>
+               </persName>
+               <birth>
+                  <date>1875</date>
+               </birth>
+               <death>
+                  <date>1951</date>
+               </death>
+            </person>
+            <person xml:id="person_mary_mother_of_jesus">
+               <persName>
+                  <forename>Marie</forename>
+                  <surname>de Nazareth</surname>
+                  <roleName>Mère de Dieu pour les chrétiens</roleName>
+               </persName>
+               <birth>
+                  <date>1<hi rend="superscript">er</hi> siècle av. J.-C.</date>
+               </birth>
+               <death>
+                  <date>1<hi rend="superscript">er</hi> siècle</date>
+               </death>
+            </person>
+         </listPerson>
+         
+         <listPlace>
+            <place xml:id="place_nice">
+               <placeName>Nice</placeName>
+            </place>
+            <place xml:id="place_nice_diocese">
+               <placeName>Diocèse de Nice</placeName>
+            </place>
+            <place xml:id="place_reparate_cathedral">
+               <placeName>Cathédrale Sainte-Réparate de Nice</placeName>
+            </place>
+            <place xml:id="place_francois_de_paul_church">
+               <placeName>Eglise Saint-François-de-Paul</placeName>
+            </place>
+            <place xml:id="place_francois_de_paul_presbytery">
+               <placeName>Presbytère de l'église Saint-François-de-Paul</placeName>
+            </place>
+            <place xml:id="place_marseille">
+               <placeName>Marseille</placeName>
+            </place>
+            <place xml:id="place_toulouse_province_op">
+               <placeName>Province de Toulouse, <abbr>o.p.</abbr><expan>ordo prædicatorum</expan></placeName>
+            </place>
+            <place xml:id="FR">
+               <placeName>France</placeName>
+            </place>
+         </listPlace>
+         
+         <listOrg>
+            <org xml:id="org_dominican_order">
+               <orgName>Ordre des Dominicains</orgName>
+               <desc>Ordre religieux catholique fondé par Dominique de Guzman</desc>
+            </org>
+         </listOrg>
+      </back>
+   </text>
+</TEI>
