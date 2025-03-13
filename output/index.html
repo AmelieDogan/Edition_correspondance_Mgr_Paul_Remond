@@ -1,0 +1,80 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="fr">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Correspondance de Paul Rémond</title>
+      <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const accordeons = document.querySelectorAll('.accordeon');
+                
+                    accordeons.forEach(accordeon => {
+                        const p = accordeon.querySelector('p');
+                        const referencesAccordeon = accordeon.querySelector('.references-accordeon');
+                    
+                        p.addEventListener('click', function () {
+                            referencesAccordeon.style.display = referencesAccordeon.style.display === 'block' ? 'none' : 'block';
+                            p.classList.toggle('active');
+                        });
+                    });
+                });
+            </script></head>
+   <body>
+      <header>
+         <div class="container">
+            <h1>Correspondance de Paul Rémond</h1>
+            <p>Édition numérique</p>
+         </div>
+      </header>
+      <nav>
+         <div class="container">
+            <ul>
+               <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+               <li><a href="index_personnes.html"><i class="fas fa-users"></i> Index des personnes</a></li>
+               <li><a href="index_lieux.html"><i class="fas fa-map-marker-alt"></i> Index des lieux</a></li>
+               <li><a href="index_organisations.html"><i class="fas fa-building"></i> Index des organisations</a></li>
+            </ul>
+         </div>
+      </nav>
+      <section id="biographie">
+         <h2>Qui est M<sup>gr</sup> Paul Rémond ?</h2>
+         <p>Né dans une famille bourgeoise et religieuse du Jura, Paul Rémond se destine à la
+            prêtrise après une licence en Lettres et un séjour en Allemagne. Ordonné en 1899,
+            il exerce d’abord à Belfort et Besançon, où il se distingue comme un brillant orateur.</p>
+         <p>Mobilisé en 1914, il se distingue au front et devient l’ecclésiastique le plus haut
+            gradé de l’armée française. En 1921, il est nommé évêque et chargé de l’aumônerie
+            de l’armée du Rhin, jouant un rôle diplomatique essentiel auprès de l’Allemagne.</p>
+         <p>Nommé évêque de Nice en 1930, il développe l’Action catholique et condamne dès 1933
+            l’antisémitisme nazi. Pendant la Seconde Guerre mondiale, après un soutien initial
+            à Vichy, il s’engage dans la Résistance et met en place un réseau qui sauve 527 enfants
+            juifs. Son refus de se plier aux exigences allemandes lui vaut une grande popularité
+            à la Libération.</p>
+         <p>Après la guerre, il fonde le journal <i>La Liberté</i>, critique le communisme et le capitalisme, et soutient brièvement les prêtres ouvriers.
+            Affaibli avec l’âge, il s’éteint en 1963. Ses funérailles à Nice rassemblent une foule
+            nombreuse, témoignant de son influence et de son prestige.</p>
+      </section>
+      <section id="correspondances">
+         <h2>Correspondances</h2>
+         <ul class="letter-list">
+            <li><a href="lettre_1.html"><strong>Correspondance entre Monseigneur Paul Rémond et le Père Etienne-Marie Vayssière,  o.p.  (20 janvier 1939)</strong></a><p class="letter-brief">De Paul Rémond à Etienne-Marie Vayssière (20 janvier 1939)</p>
+            </li>
+            <li><a href="lettre_2.html"><strong>Correspondance entre le Père Etienne-Marie Vayssière,  o.p.  et Monseigneur Paul Rémond (22 janvier 1939)</strong></a><p class="letter-brief">De Etienne-Marie Vayssière à Paul Rémond (22 janvier 1939)</p>
+            </li>
+            <li><a href="lettre_3.html"><strong>Correspondance entre Monseigneur Paul Rémond et le Père Etienne-Marie Vayssière,  o.p.  (19 février 1940)</strong></a><p class="letter-brief">De Paul Rémond à Etienne-Marie Vayssière (19 février 1940)</p>
+            </li>
+         </ul>
+      </section>
+      <footer>
+         <div class="container">
+            <div class="footer-logo">Archives historiques du diocèse de Nice</div>
+            <p>Édition numérique réalisée à partir du document conservé aux Archives historiques
+               du diocèse de Nice (FR AEC / 06 - SC2 2R6, 2)</p>
+            <p>Disponibilité : free - Creative Commons Licence CC-BY-NC</p>
+            <p><i class="far fa-copyright"></i>2025 - Tous droits réservés</p>
+         </div>
+      </footer>
+   </body>
+</html>

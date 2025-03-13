@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?xml-model href="oddforpaulremond.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="oddforpaulremond.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <TEI xml:lang="fr" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
@@ -180,7 +180,7 @@
          
          <div type="correspondence" corresp="#corresp_vayssiere-remond_1939-01-22">
             <head>Correspondance entre le Père Etienne-Marie Vayssière, <abbr>o.p.</abbr><expan>ordo prædicatorum</expan> et Monseigneur Paul Rémond (22 janvier 1939)</head>
-            <opener><dateline><placeName ref="#place_marseille">Marseille</placeName>, le <date>22 Janvier 1939</date></dateline>
+            <opener><pb n="1"/><dateline><placeName ref="#place_marseille">Marseille</placeName>, le <date>22 Janvier 1939</date></dateline>
             <address><street><num>35</num> Rue Edmond-Rostand</street></address>
             
             <salute><persName ref="#person_paul_remond">Excellence</persName>,</salute></opener>
@@ -197,9 +197,9 @@
             <lb/>à leur disposition, avec une délicate générosité
             <lb/>gratitude, pour la mission de choix, que vous
             <lb/>voulez nous voir remplir, toute en harmonie
-            <lb/>avec l'esprit de notre vocation dominicaine</p>
+            <lb/>avec l'esprit de notre vocation dominicaine
             
-            <p><lb/>cette gratitude, nous aurons à coeur, de la
+            <pb n="2"/><lb/>cette gratitude, nous aurons à coeur, de la
             <lb/>témoigner à <persName ref="#person_paul_remond">vôtre Excellence</persName>, avec un tout
             <lb/>filial dévouement, ayant pleinement
             <lb/>conscience de l'importance de la tache que vous
@@ -223,7 +223,8 @@
             <p><lb/>Ce Règlement définitif, étant conclu,
             <lb/>je me mettrai à nouveau en rapport avec <persName ref="#person_paul_remond">vôtre
             <lb/>Excellence</persName>, pour toutes réalisations pratiques qui
-            <lb/>devront suivre....</p>
+               
+            <pb n="2"/><lb/>devront suivre....</p>
             
             <p><lb/>J'avais, en commençant, confié le succès de cette
             <lb/>affaire à la <persName ref="#person_mary_mother_of_jesus">Très Sainte-Vierge</persName> .....Elle y a visiblement
@@ -245,7 +246,7 @@
          
          <div type="correspondence" corresp="#corresp_remond-vayssiere_1940-02-19">
             <head>Correspondance entre Monseigneur Paul Rémond et le Père Etienne-Marie Vayssière, <abbr>o.p.</abbr><expan>ordo prædicatorum</expan> (19 février 1940)</head>
-            <opener><dateline><settlement>Nice</settlement> le <date>19 Février 1940</date></dateline>
+            <opener><pb n="1"/><dateline><settlement>Nice</settlement> le <date>19 Février 1940</date></dateline>
             
             <salute><lb/><persName ref="#person_vayssiere">Mon révérend Père</persName>,</salute></opener>
             
@@ -270,7 +271,7 @@
             <lb/>ne vous retireront la confiance que de tout coeur je vous
             <lb/>accorde aujourd'hui.</p>
             
-            <p><lb/>Vous pouvez donc être assuré en ce qui concerne le
+            <p><pb n="2"/><lb/>Vous pouvez donc être assuré en ce qui concerne le
             <lb/><placeName ref="#place_nice_diocese">Diocèse de Nice</placeName> de la stabilité de votre installation. Vous
             <lb/>avez entrepris des dépenses considérables, votre intention
             <lb/>est d'en engager d'autres encore pour l'organisation du Cou-
