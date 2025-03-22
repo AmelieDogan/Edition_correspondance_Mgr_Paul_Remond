@@ -307,7 +307,9 @@
                <death>
                   <date>1963</date>
                </death>
+               <note>Évêque de Nice de 1930 à 1963, Paul Rémond est connu pour son engagement dans la protection des Juifs pendant la Seconde Guerre mondiale.</note>
             </person>
+            
             <person xml:id="person_vayssiere">
                <persName>
                   <forename>Etienne-Marie</forename>
@@ -320,7 +322,9 @@
                <death>
                   <date>1940</date>
                </death>
+               <note>Religieux dominicain, il a occupé la charge de provincial de la province de Toulouse et s’est illustré par sa vie spirituelle et son influence sur l’Ordre.</note>
             </person>
+            
             <person xml:id="person_matteudi">
                <persName>
                   <forename>Ludovic</forename>
@@ -333,7 +337,9 @@
                <death>
                   <date>1939</date>
                </death>
+               <note>Prêtre et chanoine, Ludovic Matteudi a joué un rôle important dans la vie religieuse locale et l’administration ecclésiastique.</note>
             </person>
+            
             <person xml:id="person_pie_xi">
                <persName>
                   <forename>Achille</forename>
@@ -346,7 +352,9 @@
                <death>
                   <date>1939</date>
                </death>
+               <note>Pape de 1922 à 1939, Pie XI est connu pour son opposition aux totalitarismes et la publication des encycliques "Mit brennender Sorge" et "Divini Redemptoris".</note>
             </person>
+            
             <person xml:id="person_martin_stanislas_gillet">
                <persName>
                   <forename>Martin Stanislas</forename>
@@ -359,7 +367,9 @@
                <death>
                   <date>1951</date>
                </death>
+               <note>Religieux dominicain français, il fut Maître de l'Ordre des Prêcheurs de 1929 à 1946 et joua un rôle clé dans le renouveau intellectuel dominicain du XXe siècle.</note>
             </person>
+            
             <person xml:id="person_mary_mother_of_jesus">
                <persName>
                   <forename>Marie</forename>
@@ -372,35 +382,45 @@
                <death>
                   <date>1<hi rend="superscript">er</hi> siècle</date>
                </death>
+               <note>Figure centrale du christianisme, Marie de Nazareth est vénérée comme la mère de Jésus. Son rôle et son importance varient selon les traditions religieuses.</note>
             </person>
          </listPerson>
-         
+
          <listPlace>
             <place xml:id="place_nice">
                <placeName>Nice</placeName>
+               <desc>Ville du sud-est de la France, située sur la Côte d'Azur.</desc>
             </place>
             <place xml:id="place_nice_diocese">
                <placeName>Diocèse de Nice</placeName>
+               <desc>Diocèse catholique couvrant le département des Alpes-Maritimes.</desc>
             </place>
             <place xml:id="place_reparate_cathedral">
                <placeName>Cathédrale Sainte-Réparate de Nice</placeName>
+               <desc>Église cathédrale du diocèse de Nice, dédiée à sainte Réparate.</desc>
             </place>
             <place xml:id="place_francois_de_paul_church">
-               <placeName>Eglise Saint-François-de-Paul</placeName>
+               <placeName>Église Saint-François-de-Paul</placeName>
+               <desc>Église historique de Nice, dédiée à Saint François de Paule.</desc>
             </place>
             <place xml:id="place_francois_de_paul_presbytery">
                <placeName>Presbytère de l'église Saint-François-de-Paul</placeName>
+               <desc>Résidence des prêtres desservant l’église Saint-François-de-Paul.</desc>
             </place>
             <place xml:id="place_marseille">
                <placeName>Marseille</placeName>
+               <desc>Grande ville portuaire du sud de la France, située en Provence.</desc>
             </place>
             <place xml:id="place_toulouse_province_op">
                <placeName>Province de Toulouse, <abbr>o.p.</abbr><expan>ordo prædicatorum</expan></placeName>
+               <desc>Province dominicaine couvrant le sud de la France, appartenant à l'Ordre des Prêcheurs.</desc>
             </place>
             <place xml:id="FR">
                <placeName>France</placeName>
+               <desc>Pays d'Europe occidentale.</desc>
             </place>
          </listPlace>
+         
          
          <listOrg>
             <org xml:id="org_dominican_order">

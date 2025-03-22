@@ -5,28 +5,20 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Index des lieux - Correspondance de Paul Rémond</title>
-      <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="static/css/styles.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const accordeons = document.querySelectorAll('.accordeon');
-                
-                    accordeons.forEach(accordeon => {
-                        const p = accordeon.querySelector('p');
-                        const referencesAccordeon = accordeon.querySelector('.references-accordeon');
-                    
-                        p.addEventListener('click', function () {
-                            referencesAccordeon.style.display = referencesAccordeon.style.display === 'block' ? 'none' : 'block';
-                            p.classList.toggle('active');
-                        });
-                    });
-                });
-            </script></head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><script src="static/js/main.js"></script></head>
    <body>
       <header>
          <div class="container">
-            <h1>Index des lieux</h1>
-            <p>Correspondance de Paul Rémond - Édition numérique</p>
+            <div class="header-content">
+               <div class="header-logo left"><img src="static/images/Blason_Paul_Remond.png" alt="Blason de Mgr Rémond"></div>
+               <div class="header-text">
+                  <h1>Index des lieux</h1>
+                  <p>Correspondance de Paul Rémond - Édition numérique</p>
+               </div>
+               <div class="header-logo right"><img src="static/images/Blason_Paul_Remond.png" alt="Blason de Mgr Rémond"></div>
+            </div>
          </div>
       </header>
       <nav>
@@ -42,6 +34,7 @@
       <section class="index">
          <div class="index-entry" id="place-place_nice">
             <h3>Nice</h3>
+            <p>Ville du sud-est de la France, située sur la Côte d'Azur.</p>
             <div class="accordeon">
                <p><strong>Apparaît dans</strong></p>
                <ul class="references-accordeon">
@@ -53,6 +46,7 @@
          </div>
          <div class="index-entry" id="place-place_nice_diocese">
             <h3>Diocèse de Nice</h3>
+            <p>Diocèse catholique couvrant le département des Alpes-Maritimes.</p>
             <div class="accordeon">
                <p><strong>Apparaît dans</strong></p>
                <ul class="references-accordeon">
@@ -63,6 +57,7 @@
          </div>
          <div class="index-entry" id="place-place_reparate_cathedral">
             <h3>Cathédrale Sainte-Réparate de Nice</h3>
+            <p>Église cathédrale du diocèse de Nice, dédiée à sainte Réparate.</p>
             <div class="accordeon">
                <p><strong>Apparaît dans</strong></p>
                <ul class="references-accordeon">
@@ -71,7 +66,8 @@
             </div>
          </div>
          <div class="index-entry" id="place-place_francois_de_paul_church">
-            <h3>Eglise Saint-François-de-Paul</h3>
+            <h3>Église Saint-François-de-Paul</h3>
+            <p>Église historique de Nice, dédiée à Saint François de Paule.</p>
             <div class="accordeon">
                <p><strong>Apparaît dans</strong></p>
                <ul class="references-accordeon">
@@ -83,6 +79,7 @@
          </div>
          <div class="index-entry" id="place-place_francois_de_paul_presbytery">
             <h3>Presbytère de l'église Saint-François-de-Paul</h3>
+            <p>Résidence des prêtres desservant l’église Saint-François-de-Paul.</p>
             <div class="accordeon">
                <p><strong>Apparaît dans</strong></p>
                <ul class="references-accordeon">
@@ -93,6 +90,7 @@
          </div>
          <div class="index-entry" id="place-place_marseille">
             <h3>Marseille</h3>
+            <p>Grande ville portuaire du sud de la France, située en Provence.</p>
             <div class="accordeon">
                <p><strong>Apparaît dans</strong></p>
                <ul class="references-accordeon">
@@ -101,7 +99,8 @@
             </div>
          </div>
          <div class="index-entry" id="place-place_toulouse_province_op">
-            <h3>Province de Toulouse, o.p.ordo prædicatorum</h3>
+            <h3>Province de Toulouse,  o.p.</h3>
+            <p>Province dominicaine couvrant le sud de la France, appartenant à l'Ordre des Prêcheurs.</p>
             <div class="accordeon">
                <p><strong>Apparaît dans</strong></p>
                <ul class="references-accordeon">
@@ -113,6 +112,7 @@
          </div>
          <div class="index-entry" id="place-FR">
             <h3>France</h3>
+            <p>Pays d'Europe occidentale.</p>
          </div>
       </section><a href="index.html" class="back-link">Retour à l'accueil</a><footer>
          <div class="container">

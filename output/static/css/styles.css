@@ -1,0 +1,672 @@
+:root {
+    /* Palette de couleurs vintage améliorée */
+    --marron-fonce: #2a1a0a;
+    --marron-clair: #8c7851;
+    --marron-gradient1: #3a2a1d;
+    --marron-gradient2: #5a4a39;
+    --marron-hover: #8b7239;
+    --fond: #f7f3e9;
+    --lettres: #f2eddc;
+    --lettre-metadata: #e8e1cc;
+    --accent-gold: #b8a369;
+    --text-principal: #33281e;
+    --text-secondaire: #5e514a;
+    --border-color: #d9c8a9;
+}
+
+/* Style général */
+body {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-principal);
+    background-color: var(--fond);
+}
+
+a {
+    color: var(--marron-fonce);
+}
+
+a:hover {
+    color: var(--marron-hover);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(160deg, var(--marron-gradient1), var(--marron-gradient2));
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid var(--accent-gold);
+    position: relative;
+}
+
+header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+header h1:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    margin: 15px auto 20px;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: 0.95;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Styles pour le header avec les images */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-text {
+    flex: 2;
+    text-align: center;
+}
+
+.header-logo {
+    flex: 0 0 auto;
+    max-width: 175px;
+    padding: 0 20px;
+}
+
+.header-logo img {
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* Navigation */
+nav {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+nav .container {
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--marron-fonce);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: var(--marron-hover);
+    background-color: rgba(184, 163, 105, 0.1);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-gold);
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav i {
+    margin-right: 6px;
+    font-size: 1rem;
+}
+
+/* Contenu principal */
+section {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+h2 {
+    color: var(--marron-fonce);
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 0.8rem;
+    margin-top: 0;
+    font-size: 1.8rem;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: var(--marron-clair);
+}
+
+/* Liste des lettres */
+.letter-list {
+    list-style: none;
+    padding: 0;
+}
+
+.letter-list li {
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.8rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.letter-list li:hover {
+    transform: translateX(5px);
+}
+
+.letter-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.letter-list a {
+    color: var(--marron-fonce);
+    text-decoration: none;
+    font-size: 1.3rem;
+    display: inline-block;
+    transition: color 0.3s;
+    border-left: 3px solid transparent;
+    padding-left: 12px;
+    margin-left: -15px;
+}
+
+.letter-list a:hover {
+    color: var(--marron-hover);
+    border-left-color: var(--accent-gold);
+}
+
+.letter-brief {
+    margin: 0.8rem 0 0;
+    color: var(--text-secondaire);
+    font-style: italic;
+    padding-left: 15px;
+    border-left: 1px solid var(--border-color);
+}
+
+/* Contenu de la lettre */
+article.letter {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 3rem;
+    background-color: var(--lettres);
+    border-radius: 2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+article.letter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(184, 163, 105, 0.1), transparent);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.letter-heading h2 {
+    margin-top: 0;
+    color: var(--marron-fonce);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-weight: bold;
+    border-bottom-color: var(--accent-gold);
+    position: relative;
+    z-index: 1;
+}
+
+.letter-metadata {
+    background-color: var(--lettre-metadata);
+    padding: 1.2rem;
+    border-radius: 3px;
+    margin: 1.5rem 0;
+    border-left: 3px solid var(--accent-gold);
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.letter-content {
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+}
+
+.letter-opener,
+.letter-closer {
+    font-style: italic;
+    color: var(--text-secondaire);
+}
+
+.letter-body {
+    margin: 2.5rem 0;
+    position: relative;
+}
+
+.letter-body::before {
+    font-family: Georgia, serif;
+    font-size: 6rem;
+    color: rgba(184, 163, 105, 0.2);
+    position: absolute;
+    left: -35px;
+    top: -50px;
+    pointer-events: none;
+}
+
+.letter-body p {
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.place-date {
+    text-align: right;
+    margin-bottom: 1.3rem;
+    font-size: 0.95rem;
+}
+
+.salutation {
+    margin-bottom: 1.8rem;
+    font-size: 1.05rem;
+}
+
+.signed {
+    text-align: right;
+    margin-top: 2rem;
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+/* Mise en page de la barre latérale */
+.content-with-sidebar {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: 300px;
+    height: 100%;
+    padding: 1.5rem;
+    background-color: var(--lettre-metadata);
+    border-radius: 3px;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.filter-group {
+    margin-bottom: 1rem;
+}
+
+.filter-item {
+    margin: 0.25rem 0;
+}
+
+.filter-item:hover {
+    color: var(--marron-hover);
+}
+
+.entity-info {
+    padding: 1.5rem;
+    border-radius: 3px;
+    background-color: var(--lettres);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Styles de surlignage pour les entités */
+.person, .place, .org {
+    color: var(--marron-hover);
+}
+.person:hover, .place:hover, .org:hover {
+    cursor: pointer;
+}
+
+.highlight {
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
+.person.highlight { background-color: rgba(173, 216, 230, 0.6); }
+.place.highlight { background-color: rgba(144, 238, 144, 0.6); }
+.org.highlight { background-color: rgba(255, 182, 193, 0.6); }
+
+/* Système d'infobulles personnalisées */
+[title] {
+    position: relative;
+    cursor: help;
+}
+
+[title]:hover::before {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--marron-clair);
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 10px;
+    width: max-content;
+    max-width: 300px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+[title]:hover::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--marron-hover) transparent transparent transparent;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+[title]:hover::before,
+[title]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.3s;
+}
+
+/* Index */
+.index-entry {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.index-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.index-entry h3 {
+    color: var(--marron-fonce);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    position: relative;
+    padding-left: 15px;
+}
+
+.index-entry h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: var(--accent-gold);
+}
+
+.accordeon {
+    background-color: #f3efe5;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.accordeon:hover {
+    background-color: #f8f6f0;
+}
+
+.accordeon p {
+    cursor: pointer;
+    color: var(--marron-fonce);
+    margin: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordeon p::after {
+    content: '+';
+    font-weight: bold;
+    color: var(--accent-gold);
+    border: 1px solid var(--border-color);
+    display: inline-block;
+    transition: all 0.3s ease;
+    padding: 0px 8px;
+    border-radius: 50%;
+    margin-left: 10px;
+    line-height: 1.4;
+}
+
+.accordeon p.active::after {
+    content: '−';
+    background-color: var(--accent-gold);
+    color: white;
+    border-color: var(--accent-gold);
+}
+
+.references-accordeon {
+    display: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.references-accordeon li {
+    margin-bottom: 8px;
+}
+
+.references-accordeon li:last-child {
+    margin-bottom: 0;
+}
+
+.references-accordeon a {
+    color: var(--marron-fonce);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding-left: 5px;
+    border-left: 2px solid transparent;
+}
+
+.references-accordeon a:hover {
+    color: var(--marron-hover);
+    border-left-color: var(--accent-gold);
+}
+
+abbr {
+    text-decoration: none;
+    border-bottom: 1px dotted var(--text-secondaire);
+    cursor: help;
+}
+
+.page-break {
+    text-align: center;
+    margin: 15px 0;
+    color: var(--text-secondaire);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 20px 0;
+}
+
+/* Lien retour */
+.back-link {
+    display: inline-block;
+    text-align: center;
+    margin: 2rem auto;
+    color: var(--marron-fonce);
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    background-color: #f9f7f2;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.back-link:hover {
+    background-color: var(--marron-fonce);
+    color: white;
+    border-color: var(--marron-fonce);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(160deg, var(--marron-gradient1), var(--marron-gradient2));
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    margin-top: 4rem;
+    position: relative;
+    border-top: 3px solid var(--accent-gold);
+}
+
+footer:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    position: relative;
+}
+
+.footer-logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    opacity: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.footer-logo::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    background-color: var(--accent-gold);
+    margin: 15px auto;
+}
+
+/* Animation pour les liens */
+@keyframes borderFade {
+    0% { border-color: transparent; }
+    100% { border-color: var(--accent-gold); }
+}
