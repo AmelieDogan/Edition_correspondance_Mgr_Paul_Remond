@@ -22,6 +22,8 @@ body {
     padding: 0;
     color: var(--text-principal);
     background-color: var(--fond);
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -33,7 +35,7 @@ a:hover {
 }
 
 .container {
-    max-width: 1000px;
+    width: 1000px;
     margin: 0 auto;
     padding: 0 25px;
 }
@@ -177,7 +179,7 @@ nav i {
 
 /* Contenu principal */
 section {
-    max-width: 1000px;
+    width: 1000px;
     margin: 3rem auto;
     padding: 2.5rem;
     background-color: white;
@@ -215,6 +217,14 @@ h2::after {
     width: 60px;
     height: 2px;
     background-color: var(--marron-clair);
+}
+
+h3 {
+    color: var(--marron-fonce);
+    padding-top: 0.4rem;
+    font-size: 1.4rem;
+    position: relative;
+    letter-spacing: 0.8px;
 }
 
 /* Liste des lettres */

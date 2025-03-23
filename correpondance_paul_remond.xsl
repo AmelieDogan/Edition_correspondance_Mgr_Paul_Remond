@@ -6,16 +6,16 @@
     exclude-result-prefixes="tei"
     version="2.0">
     
-    <!-- Configuration de sortie -->
     <xsl:output method="html" encoding="UTF-8" indent="yes" doctype-public="-//W3C//DTD HTML 4.01//EN" doctype-system="http://www.w3.org/TR/html4/strict.dtd"/>
+    
+    <xsl:variable name="main-title" select="//titleStmt/title"/>
+    <xsl:variable name="license" select="//publicationStmt/availability/licence"/>
+    <xsl:variable name="availability" select="//publicationStmt/availability/@status"/>
     
     <!-- Variable pour l'accès aux personnes, lieux et organisations -->
     <xsl:variable name="persons" select="//listPerson/person"/>
     <xsl:variable name="places" select="//listPlace/place"/>
     <xsl:variable name="orgs" select="//listOrg/org"/>
-    <xsl:variable name="main-title" select="//titleStmt/title"/>
-    <xsl:variable name="license" select="//publicationStmt/availability/licence"/>
-    <xsl:variable name="availability" select="//publicationStmt/availability/@status"/>
     
     <xsl:template match="/">
         <!-- Création du fichier index.html -->
@@ -45,29 +45,43 @@
                     
                     <section id="correspondances">
                         <h2>Correspondances</h2>
-                        <ul class="letter-list">
-                            <xsl:for-each select="//body/div[@type='correspondence']">
-                                <xsl:variable name="letter-id" select="@corresp"/>
-                                <xsl:variable name="metadata" select="//correspDesc[@xml:id=substring-after($letter-id, '#')]"/>
-                                <xsl:variable name="letter-filename">lettre_<xsl:value-of select="position()"/>.html</xsl:variable>
-                                <xsl:variable name="letter-title" select="head/node()[not(self::expan)]"/>
-                                
-                                <li>
-                                    <a href="{$letter-filename}">
-                                        <strong><xsl:value-of select="$letter-title"/></strong>
-                                    </a>
-                                    <p class="letter-brief">
-                                        <xsl:text>De </xsl:text>
-                                        <xsl:value-of select="$metadata/correspAction[@type='sent']/persName"/>
-                                        <xsl:text> à </xsl:text>
-                                        <xsl:value-of select="$metadata/correspAction[@type='received']/persName"/>
-                                        <xsl:text> (</xsl:text>
-                                        <xsl:value-of select="$metadata/correspAction[@type='sent']/date"/>
-                                        <xsl:text>)</xsl:text>
-                                    </p>
-                                </li>
-                            </xsl:for-each>
-                        </ul>
+                        
+                        <!-- Regrouper par année -->
+                        <xsl:for-each-group select="//body/div[@type='correspondence']" 
+                            group-by="substring(//correspDesc[@xml:id=substring-after(current()/@corresp, '#')]/correspAction[@type='sent']/date/@when, 1, 4)">
+                            <xsl:sort select="current-grouping-key()" data-type="text" order="ascending"/>
+                            
+                            <h3>Année <xsl:value-of select="current-grouping-key()"/></h3>
+                            <ul class="letter-list">
+                                <!-- Trier les lettres par date dans chaque groupe -->
+                                <xsl:for-each select="current-group()">
+                                    <xsl:sort select="//correspDesc[@xml:id=substring-after(current()/@corresp, '#')]/correspAction[@type='sent']/date/@when" 
+                                        data-type="text" order="ascending"/>
+                                    
+                                    <xsl:variable name="letter-id" select="@corresp"/>
+                                    <xsl:variable name="letter-id-clean" select="substring-after($letter-id, '#')"/>
+                                    <xsl:variable name="metadata" select="//correspDesc[@xml:id=$letter-id-clean]"/>
+                                    <xsl:variable name="letter-filename">lettre_<xsl:value-of select="$letter-id-clean"/>.html</xsl:variable>
+                                    <xsl:variable name="letter-title" select="head/node()[not(self::expan)]"/>
+                                    <xsl:variable name="letter-date" select="$metadata/correspAction[@type='sent']/date/@when"/>
+                                    
+                                    <li>
+                                        <a href="{$letter-filename}">
+                                            <strong><xsl:value-of select="$letter-title"/></strong>
+                                        </a>
+                                        <p class="letter-brief">
+                                            <xsl:text>De </xsl:text>
+                                            <xsl:value-of select="$metadata/correspAction[@type='sent']/persName"/>
+                                            <xsl:text> à </xsl:text>
+                                            <xsl:value-of select="$metadata/correspAction[@type='received']/persName"/>
+                                            <xsl:text> (</xsl:text>
+                                            <xsl:value-of select="$metadata/correspAction[@type='sent']/date"/>
+                                            <xsl:text>)</xsl:text>
+                                        </p>
+                                    </li>
+                                </xsl:for-each>
+                            </ul>
+                        </xsl:for-each-group>
                     </section>
                     
                     <xsl:call-template name="footer"/>
@@ -78,8 +92,9 @@
         <!-- Création des pages pour chaque lettre -->
         <xsl:for-each select="//body/div[@type='correspondence']">
             <xsl:variable name="letter-id" select="@corresp"/>
+            <xsl:variable name="letter-id-clean" select="substring-after(@corresp, '#')"/>
+            <xsl:variable name="letter-filename">lettre_<xsl:value-of select="$letter-id-clean"/>.html</xsl:variable>
             <xsl:variable name="metadata" select="//correspDesc[@xml:id=substring-after($letter-id, '#')]"/>
-            <xsl:variable name="letter-filename">lettre_<xsl:value-of select="position()"/>.html</xsl:variable>
             <xsl:variable name="letter-title" select="head/node()[not(self::expan)]"/>
             <xsl:variable name="current-letter" select="."/>
             
@@ -104,21 +119,22 @@
                         <div class="content-with-sidebar">
                             <aside class="sidebar">
                                 <div class="entity-filter">
-                                    <h3>Filtrer les entités</h3>
+                                    <h3>Surligner des entités</h3>
                                     
                                     <!-- Section pour les personnes -->
                                     <xsl:if test="count($letter-persons) > 0">
                                         <div class="filter-group">
                                             <h4>Personnes</h4>
                                             <xsl:for-each select="$persons">
+                                                <xsl:sort select="concat(persName/surname, ', ', persName/forename)" data-type="text" order="ascending"/>
                                                 <xsl:variable name="person-ref" select="concat('#', @xml:id)"/>
                                                 <xsl:if test="$person-ref = $letter-persons">
                                                     <div class="filter-item">
                                                         <input type="checkbox" id="person-{@xml:id}-filter" data-entity-class="person-{@xml:id}" />
                                                         <label for="person-{@xml:id}-filter">
-                                                            <xsl:value-of select="persName/forename/node()[not(self::expan)]"/>
-                                                            <xsl:text> </xsl:text>
                                                             <xsl:value-of select="persName/surname/node()[not(self::expan)]"/>
+                                                            <xsl:text>, </xsl:text>
+                                                            <xsl:value-of select="persName/forename/node()[not(self::expan)]"/>
                                                         </label>
                                                     </div>
                                                 </xsl:if>
@@ -131,6 +147,7 @@
                                         <div class="filter-group">
                                             <h4>Lieux</h4>
                                             <xsl:for-each select="$places">
+                                                <xsl:sort select="placeName" data-type="text" order="ascending"/>
                                                 <xsl:variable name="place-ref" select="concat('#', @xml:id)"/>
                                                 <xsl:if test="$place-ref = $letter-places">
                                                     <div class="filter-item">
@@ -149,6 +166,7 @@
                                         <div class="filter-group">
                                             <h4>Organisations</h4>
                                             <xsl:for-each select="$orgs">
+                                                <xsl:sort select="orgName" data-type="text" order="ascending"/>
                                                 <xsl:variable name="org-ref" select="concat('#', @xml:id)"/>
                                                 <xsl:if test="$org-ref = $letter-orgs">
                                                     <div class="filter-item">
@@ -160,17 +178,19 @@
                                                 </xsl:if>
                                             </xsl:for-each>
                                         </div>
+                                        
+                                        <h3>Informations sur une entité</h3>
+                                        
+                                        <div id="entity-info-panel" class="entity-info">
+                                            <p>Cliquez sur entité nommée pour afficher ses informations</p>
+                                            <!-- Les informations sur l'entité sélectionnée s'afficheront ici grâce au Javascript -->
+                                        </div>
                                     </xsl:if>
                                     
                                     <!-- Message si aucune entité n'est présente -->
                                     <xsl:if test="count($letter-persons) = 0 and count($letter-places) = 0 and count($letter-orgs) = 0">
                                         <p>Aucune entité nommée n'est présente dans cette lettre.</p>
                                     </xsl:if>
-                                </div>
-                                
-                                <div id="entity-info-panel" class="entity-info">
-                                    <p>Cliquez sur entité nommée pour afficher ses informations</p>
-                                    <!-- Les informations sur l'entité sélectionnée s'afficheront ici grâce au Javascript -->
                                 </div>
                             </aside>
                             
@@ -252,7 +272,10 @@
                     <xsl:call-template name="main-navigation"/>
                     
                     <section class="index">
-                        <xsl:apply-templates select="//listPerson/person"/>
+                        <xsl:apply-templates select="//listPerson/person">
+                            <xsl:sort select="persName/surname" data-type="text" order="ascending"/>
+                            <xsl:sort select="persName/forename" data-type="text" order="ascending"/>
+                        </xsl:apply-templates>
                     </section>
                     
                     <a href="index.html" class="back-link">Retour à l'accueil</a>
@@ -277,7 +300,9 @@
                     <xsl:call-template name="main-navigation"/>
                     
                     <section class="index">
-                        <xsl:apply-templates select="//listPlace/place"/>
+                        <xsl:apply-templates select="//listPlace/place">
+                            <xsl:sort select="placeName" data-type="text" order="ascending"/>
+                        </xsl:apply-templates>
                     </section>
                     
                     <a href="index.html" class="back-link">Retour à l'accueil</a>
@@ -302,7 +327,9 @@
                     <xsl:call-template name="main-navigation"/>
                     
                     <section class="index">
-                        <xsl:apply-templates select="//listOrg/org"/>
+                        <xsl:apply-templates select="//listOrg/org">
+                            <xsl:sort select="orgName" data-type="text" order="ascending"/>
+                        </xsl:apply-templates>
                     </section>
                     
                     <a href="index.html" class="back-link">Retour à l'accueil</a>
@@ -421,9 +448,9 @@
     <xsl:template match="person">
         <div class="index-entry" id="person-{@xml:id}">
             <h3>
-                <xsl:value-of select="persName/forename/node()[not(self::expan)]"/>
-                <xsl:text> </xsl:text>
                 <xsl:value-of select="persName/surname/node()[not(self::expan)]"/>
+                <xsl:text>, </xsl:text>
+                <xsl:value-of select="persName/forename/node()[not(self::expan)]"/>
             </h3>
             <xsl:if test="persName/roleName">
                 <p><strong>Fonction : </strong><xsl:value-of select="persName/roleName"/></p>
@@ -447,10 +474,12 @@
                     </p>
                     <ul class="references-accordeon">
                         <xsl:for-each select="//body/div[@type='correspondence'][descendant::persName[@ref=concat('#', $person-id)]]">
-                            <xsl:variable name="letter-pos" select="position()"/>
+                            <xsl:sort select="//correspDesc[@xml:id=substring-after(current()/@corresp, '#')]/correspAction[@type='sent']/date/@when" 
+                                data-type="text" order="ascending"/>
+                            <xsl:variable name="letter-id-clean" select="substring-after(@corresp, '#')"/>
                             <xsl:variable name="letter-title" select="head/node()[not(self::expan)]"/>
                             <li>
-                                <a href="lettre_{$letter-pos}.html">
+                                <a href="lettre_{$letter-id-clean}.html">
                                     <xsl:value-of select="$letter-title"/>
                                 </a>
                             </li>
@@ -478,10 +507,12 @@
                     </p>
                     <ul class="references-accordeon">
                         <xsl:for-each select="//body/div[@type='correspondence'][descendant::placeName[@ref=concat('#', $place-id)]]">
-                            <xsl:variable name="letter-pos" select="position()"/>
+                            <xsl:sort select="//correspDesc[@xml:id=substring-after(current()/@corresp, '#')]/correspAction[@type='sent']/date/@when" 
+                                data-type="text" order="ascending"/>
+                            <xsl:variable name="letter-id-clean" select="substring-after(@corresp, '#')"/>
                             <xsl:variable name="letter-title" select="head/node()[not(self::expan)]"/>
                             <li>
-                                <a href="lettre_{$letter-pos}.html">
+                                <a href="lettre_{$letter-id-clean}.html">
                                     <xsl:value-of select="$letter-title"/>
                                 </a>
                             </li>
@@ -509,10 +540,12 @@
                     </p>
                     <ul class="references-accordeon">
                         <xsl:for-each select="//body/div[@type='correspondence'][descendant::orgName[@ref=concat('#', $org-id)]]">
-                            <xsl:variable name="letter-pos" select="position()"/>
+                            <xsl:sort select="//correspDesc[@xml:id=substring-after(current()/@corresp, '#')]/correspAction[@type='sent']/date/@when" 
+                                data-type="text" order="ascending"/>
+                            <xsl:variable name="letter-id-clean" select="substring-after(@corresp, '#')"/>
                             <xsl:variable name="letter-title" select="head/node()[not(self::expan)]"/>
                             <li>
-                                <a href="lettre_{$letter-pos}.html">
+                                <a href="lettre_{$letter-id-clean}.html">
                                     <xsl:value-of select="$letter-title"/>
                                 </a>
                             </li>
