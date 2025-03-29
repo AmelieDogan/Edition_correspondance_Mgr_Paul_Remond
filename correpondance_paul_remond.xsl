@@ -207,7 +207,7 @@
                                             <strong>De : </strong>
                                             <xsl:apply-templates select="$metadata/correspAction[@type='sent']/persName"/>
                                             <xsl:text> (</xsl:text>
-                                            <xsl:value-of select="$metadata/correspAction[@type='sent']/placeName/settlement"/>
+                                            <xsl:value-of select="$metadata/correspAction[@type='sent']/placeName//settlement"/>
                                             <xsl:text>, </xsl:text>
                                             <xsl:value-of select="$metadata/correspAction[@type='sent']/date"/>
                                             <xsl:text>)</xsl:text>
