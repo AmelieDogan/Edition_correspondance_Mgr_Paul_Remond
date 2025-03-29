@@ -178,7 +178,9 @@
                                                 </xsl:if>
                                             </xsl:for-each>
                                         </div>
-                                        
+                                    </xsl:if>
+                                    
+                                    <xsl:if test="count($letter-persons) > 0 or count($letter-places) > 0 or count($letter-orgs) > 0">
                                         <h3>Informations sur une entité</h3>
                                         
                                         <div id="entity-info-panel" class="entity-info">
