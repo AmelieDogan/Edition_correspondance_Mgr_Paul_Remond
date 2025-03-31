@@ -396,12 +396,8 @@
     <xsl:template name="footer">
         <footer>
             <div class="container">
-                <div class="footer-logo">Archives historiques du diocèse de Nice</div>
-                <p>Édition numérique réalisée à partir du document conservé aux Archives historiques du diocèse de Nice (FR AEC / 06 - SC2 2R6, 2)</p>
+                <p>Édition numérique réalisée à partir du document conservé aux<br/>Archives historiques du diocèse de Nice (FR AEC / 06 - SC2 2R6, 2)</p>
                 <p>
-                    <xsl:text>Disponibilité : </xsl:text>
-                    <xsl:value-of select="$availability"/>
-                    <xsl:text> - </xsl:text>
                     <xsl:value-of select="$license"/>
                 </p>
                 <p><i class="far fa-copyright"></i> <xsl:value-of select="format-date(current-date(), '[Y]')"/> - Tous droits réservés</p>

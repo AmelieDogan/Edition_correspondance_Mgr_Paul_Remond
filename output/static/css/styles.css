@@ -656,25 +656,6 @@ footer p {
     position: relative;
 }
 
-.footer-logo {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    opacity: 1;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    position: relative;
-}
-
-.footer-logo::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 2px;
-    background-color: var(--accent-gold);
-    margin: 15px auto;
-}
-
 /* Animation pour les liens */
 @keyframes borderFade {
     0% { border-color: transparent; }
